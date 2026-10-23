@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 1. Grid Centering */
+body, .login-wrapper {
+    display: grid;
+    place-items: center; /* Perfectly centers the card vertically and horizontally */
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+/* 2. Border-Radius and Box-Shadow */
+.login-card {
+    display: flex; /* Flexbox for the two-column layout */
+    width: 800px;
+    height: 480px;
+    background-color: #ffffff;
+    border-radius: 16px; /* Smooth rounded corners */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); /* Soft, realistic depth */
+    overflow: hidden; /* Ensures child elements don't break the rounded corners */
+}
+
+/* 3. Form Styling (Flexbox inside the form) */
+.form-side {
+    flex: 1; /* Takes up 50% of the card */
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-side h2 {
+    color: #111827;
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Consistent spacing between form elements */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px; /* Inner form element radius */
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: -5px;
+}
+
+.checkbox-group label {
+    font-weight: 400;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Decorative Right Panel */
+.decorative-side {
+    flex: 1; /* Takes up the remaining 50% */
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+
+.decorative-side h2 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.decorative-side p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}

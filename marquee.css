@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+.marquee-wrapper {
+    width: 100%;
+    max-width: 1100px; /* Matches the wide look of the reference image */
+    text-align: center;
+    padding: 20px;
+}
+
+.marquee-header {
+    margin-bottom: 24px;
+}
+
+.marquee-header h2 {
+    color: #1f2937;
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.marquee-header p {
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.marquee-banner {
+    background-color: #1f2937; /* Dark background from the reference */
+    border-radius: 8px;
+    padding: 16px 0;
+    overflow: hidden; /* Hides the text scrolling outside the banner */
+    width: 100%;
+}
+
+/* 1. Animation Setup */
+.marquee-track {
+    display: inline-flex;
+    white-space: nowrap;
+    
+    /* Applies the infinite loop animation */
+    /* Syntax: animation-name | duration | timing-function | iteration-count */
+    animation: scrollLeft 15s linear infinite; 
+}
+
+/* 2. Animation Play State */
+.marquee-banner:hover .marquee-track {
+    /* Pauses the looping text when the user hovers over the dark banner */
+    animation-play-state: paused; 
+}
+
+.marquee-item {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0 45px; /* Creates the gap between the words */
+}
+
+/* 3. Keyframes for Infinite Looping */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* 
+           Because we duplicated the items (Set 1 and Set 2), 
+           translating exactly -50% pulls the second set into the exact 
+           starting position of the first set, creating a seamless, invisible loop.
+        */
+        transform: translateX(-50%); 
+    }
+}
